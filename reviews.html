@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ביקורות | מסעדת מלודי</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #d4af37; --dark-bg: #121212; --light-text: #f4f4f4; --gray-text: #aaaaaa; }
+        body { font-family: 'Heebo', sans-serif; background-color: var(--dark-bg); color: var(--light-text); margin: 0; padding-top: 100px; }
+        header { background: rgba(0,0,0,0.9); padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 100; border-bottom: 1px solid #333; box-sizing: border-box; }
+        nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+        nav a { color: var(--light-text); text-decoration: none; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .review-card { background: #1a1a1a; padding: 25px; margin-bottom: 20px; border-right: 4px solid var(--gold); }
+        .stars { color: var(--gold); margin-bottom: 10px; }
+        .author { font-weight: bold; color: var(--gold); }
+        .gold-title { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 40px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" style="font-size: 24px; color: var(--gold); font-weight: bold;">מלודי.</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="color: white;">חזרה לבית</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="gold-title">מה הלקוחות שלנו מספרים</h1>
+        <p style="text-align: center; color: var(--gray-text);">ממוצע דירוג: 4.4 (מתוך 278 ביקורות בגוגל)</p>
+
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"מסעדה רוסית-סובייטית מסורתית. תתחילו עם וודקה ומנות פתיחה קרות. חוויה מלאה של נוסטלגיה!"</p>
+            <p class="author">- אלכסיי פירגובסקי</p>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"מדהים! מוזיקה טובה ואווירה מצוינת. נהנינו מכל רגע."</p>
+            <p class="author">- גל-ים</p>
+        </div>
+        
+        </div>
+</body>
+</html>

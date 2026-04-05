@@ -3,348 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מסעדת מלודי | חוויה קולינרית בפתח תקווה</title>
+    <title>מסעדת מלודי | דף הבית</title>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     <style>
-        /* הגדרות עיצוב כלליות - סגנון יוקרתי */
-        :root {
-            --gold: #d4af37;
-            --dark-bg: #121212;
-            --light-text: #f4f4f4;
-            --gray-text: #aaaaaa;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Heebo', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--light-text);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif; /* פונט יוקרתי לכותרות */
-            color: var(--gold);
-        }
-
-        /* תפריט ניווט */
-        header {
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #333;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            color: var(--light-text);
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--gold);
-        }
-
-        /* אזור ראשי - Hero */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 22px;
-            max-width: 600px;
-            margin-bottom: 30px;
-            color: var(--gray-text);
-        }
-
-        .btn {
-            padding: 15px 30px;
-            background-color: transparent;
-            color: var(--gold);
-            border: 2px solid var(--gold);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: var(--gold);
-            color: var(--dark-bg);
-        }
-
-        /* סעיפים כלליים */
-        section {
-            padding: 80px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 40px;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background-color: var(--gold);
-            display: block;
-            margin: 15px auto 0;
-        }
-
-        /* תפריט המסעדה */
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .menu-item {
-            border-bottom: 1px dashed #444;
-            padding-bottom: 20px;
-        }
-
-        .menu-item-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .menu-item h3 {
-            font-size: 22px;
-            color: var(--light-text);
-        }
-
-        .menu-item-desc {
-            color: var(--gray-text);
-            font-size: 14px;
-        }
-
-        /* ביקורות */
-        .reviews-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-
-        .review-card {
-            background-color: #1a1a1a;
-            padding: 30px;
-            border-radius: 8px;
-            width: 350px;
-            border: 1px solid #333;
-        }
-
-        .stars {
-            color: var(--gold);
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .review-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: #ddd;
-        }
-
-        .reviewer-name {
-            font-weight: bold;
-            color: var(--gold);
-        }
-
-        /* מידע ויצירת קשר */
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            text-align: center;
-            background-color: #1a1a1a;
-            padding: 50px;
-            border-radius: 8px;
-        }
-
-        .info-block i {
-            font-size: 30px;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-
-        .info-block h4 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--light-text);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #000;
-            color: var(--gray-text);
-            font-size: 14px;
-            border-top: 1px solid #333;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .hero h1 {
-                font-size: 40px;
-            }
-        }
+        /* העיצוב המקורי נשמר */
+        :root { --gold: #d4af37; --dark-bg: #121212; --light-text: #f4f4f4; --gray-text: #aaaaaa; }
+        body { font-family: 'Heebo', sans-serif; background-color: var(--dark-bg); color: var(--light-text); margin: 0; }
+        header { background: rgba(0,0,0,0.9); padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 100; border-bottom: 1px solid #333; box-sizing: border-box; }
+        nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+        nav a { color: var(--light-text); text-decoration: none; transition: 0.3s; }
+        nav a:hover { color: var(--gold); }
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(18,18,18,0.8), rgba(18,18,18,0.8)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?fit=crop&w=1920&q=80') center/cover; }
+        .gold-text { color: var(--gold); font-family: 'Playfair Display', serif; }
+        section { padding: 80px 50px; max-width: 1200px; margin: 0 auto; }
+        .btn { padding: 15px 30px; border: 2px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; margin-top: 20px; }
+        .btn:hover { background: var(--gold); color: #000; }
     </style>
 </head>
 <body>
-
     <header>
-        <div class="logo">מלודי.</div>
+        <div class="logo" style="font-size: 24px; color: var(--gold); font-weight: bold;">מלודי.</div>
         <nav>
             <ul>
-                <li><a href="#about">עלינו</a></li>
-                <li><a href="#menu">תפריט</a></li>
-                <li><a href="#reviews">ביקורות</a></li>
-                <li><a href="#contact">הגעה ויצירת קשר</a></li>
+                <li><a href="index.html">בית</a></li>
+                <li><a href="reviews.html">ביקורות הלקוחות</a></li>
+                <li><a href="#contact">צור קשר</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>מסעדת מלודי</h1>
-        <p>חוויה קולינרית אותנטית שמשלבת מסורת סובייטית, אלכוהול משובח ואווירה בלתי נשכחת. המקום המושלם לערב של אוכל טוב ומוזיקה נהדרת.</p>
-        <a href="#contact" class="btn">הזמינו שולחן</a>
-    </section>
-
-    <section id="menu">
-        <h2 class="section-title">טעימה מהתפריט שלנו</h2>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <h3>פלטת נקניקים קלאסית</h3>
-                </div>
-                <p class="menu-item-desc">Колбасная нарезка - מבחר בשרים קרים המוגשים בעיצוב מוקפד.</p>
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <h3>סלט שובה</h3>
-                </div>
-                <p class="menu-item-desc">Салат Шуба - דג מלוח ב"מעיל" של ירקות שורש ומיונז. קלאסיקה של פעם.</p>
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <h3>בשר בנוסח צרפתי</h3>
-                </div>
-                <p class="menu-item-desc">Мясо По-Французски - מנה עשירה ומנחמת מהמטבח המזרח-אירופאי.</p>
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <h3>פילה סלמון</h3>
-                </div>
-                <p class="menu-item-desc">Рыба Саломон - דג סלמון טרי ועסיסי, מוגש עם תוספות חמות.</p>
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <h3>שישליק אותנטי</h3>
-                </div>
-                <p class="menu-item-desc">Шашлык - שיפודים עסיסיים על האש, בדיוק כמו שצריך להיות.</p>
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <h3>עוגת נפוליאון</h3>
-                </div>
-                <p class="menu-item-desc">Торт Наполеон - עוגת שכבות פריכה וקרם עשיר לקינוח מושלם.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews">
-        <h2 class="section-title">מה הלקוחות שלנו אומרים</h2>
-        <div class="reviews-container">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"מ ד ה י ם! אכלנו במקום ונהנינו מכל רגע."</p>
-                <p class="reviewer-name">- גל-ים ברכות שחיה</p>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"באנו לנופש, אכלנו, שתינו ונהנינו. מוזיקה טובה, אווירה טובה. ממליצים בחום!"</p>
-                <p class="reviewer-name">- Dvorah Shushan</p>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"מסעדה רוסית-סובייטית מסורתית. תתחילו עם וודקה ומנות פתיחה קרות, תמשיכו לחמות ולעיקריות. חוויה מלאה של נוסטלגיה."</p>
-                <p class="reviewer-name">- Alexei Pirogovski</p>
-            </div>
-        </div>
-    </section>
+    <div class="hero">
+        <h1 class="gold-text" style="font-size: 60px;">מסעדת מלודי</h1>
+        <p style="font-size: 20px; color: var(--gray-text);">המטבח הסובייטי-רוסי הכי יוקרתי בפתח תקווה</p>
+        <a href="reviews.html" class="btn">קראו מה חושבים עלינו</a>
+    </div>
 
     <section id="contact">
-        <h2 class="section-title">בואו לבקר אותנו</h2>
-        <div class="contact-info">
-            <div class="info-block">
-                <h4>כתובת</h4>
-                <p>בר כוכבא 64, פתח תקווה</p>
-                <p>3VWP+88 פתח תקווה</p>
-            </div>
-            <div class="info-block">
-                <h4>שעות פעילות</h4>
-                <p>פתוח כל יום</p>
-                <p>עד השעה 0:00</p>
-                <p>אכילה במקום • איסוף עצמי</p>
-            </div>
-            <div class="info-block">
-                <h4>הזמנות</h4>
-                <p>054-524-6018</p>
-                <p>דירוג בגוגל: 4.4 מתוך 278 ביקורות</p>
-            </div>
-        </div>
+        <h2 class="gold-text" style="text-align: center;">בואו לבקר</h2>
+        <p style="text-align: center;">בר כוכבא 64, פתח תקווה | טלפון: 054-524-6018</p>
     </section>
-
-    <footer>
-        <p>&copy; 2026 מסעדת מלודי. כל הזכויות שמורות.</p>
-    </footer>
-
 </body>
 </html>
